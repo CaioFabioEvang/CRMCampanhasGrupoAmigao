@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div>
+        <ul>
+            <li class="item-menu">
+                <a href="/index.html">
+                    <span class="icon"><i class="bi bi-house-door"></i></span>
+                    <span class="txt-link">Ínicio</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-mailbox-flag"></i></span>
+                    <span class="txt-link">Campanhas</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnplanejamento()" id="btn-planej">
+                    <span class="icon"><i class="bi bi-calendar3"></i></span>
+                    <span class="txt-link">Planejamento</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnresultado()" id="btn-resultado">
+                    <span class="icon"><i class="bi bi-umbrella-fill"></i></span>
+                    <span class="txt-link">Resultados</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnconfig()" id="btn-config">
+                    <span class="icon"><i class="bi bi-gear"></i></span>
+                    <span class="txt-link">Configurações</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div  class="conteudo-movivel">
+        <div id="conteiner__campanhas">
+            <header>
+              <div id="conteiner__text">
+                <h1 style="color: #ffffff;">CRM - Campanhas</h1>
+                <h1 style="background-color: #2a3db4; padding: 3px; color: #ffffff; border-radius: 5px;">Grupo Amigão</h1>
+              </div>
+              <div style="padding: 5px 0 30px 0;">
+                <span style="color: #ffffff; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;">Selecione o Mês:</span>
+                <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+                <nav id="menu-meses" class="menu-meses">
+                  <ul>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Janeiro</a></li>
+                    <li><a href="/PaginaCampanhaMeses/Fevereiro/index.html" class="menu-mes" id="menu-meses">Fevereiro</a></li>
+                    <li><a href="/PaginaCampanhaMeses/Março/index.html" class="menu-mes" id="menu-meses">Março</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Abril</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Maio</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Junho</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Julho</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Agosto</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Setembro</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Outubro</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Novembro</a></li>
+                    <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Dezembro</a></li>
+                </ul>
+                </nav>
+            </div>
+              <label for="campanhaSelect" style="font-weight: bold; color: #ffffff; padding: 3px;">Selecione a campanha:</label>
+              <select id="campanhaSelect" onchange="mostrarDados()">
+                <option id="optionCampaign" style="font-weight: bold;"> -- Escolha Campanha -- </option>
+                <option id="naoUsar">Campanhas Semana - 01/03 a 10/03</option>
+                  <option value="campanha1">69138 - Custom Audience - Acao Picanha & File Mignon</option>
+                  <option value="campanha2">69139 - Custom Audience - Jornada Inativos Quarta Semana 01032024</option>
+                  <option value="campanha3">69154 - Email - Festival Beleza Publico 1 01032024</option>
+                  <option value="campanha4">69156 - Email - Festival Beleza Publico 2 01032024</option>
+                  <option value="campanha5">69145 - Email - Sabadao Amigao Publico 1 02032024</option>
+                  <option value="campanha6">69147 - Email - Sabadao Amigao Publico 2 02032024</option>
+                  <option value="campanha7">69146 - SMS - Acao de Picanha e File Mignon 02032024</option>
+                  <option value="campanha8">69155 - SMS - Festival Beleza Publico 1 01032024</option>
+                  <option value="campanha9">69157 - SMS - Festival Beleza Publico 2 01032024</option>
+                  <option value="campanha10">69158 - SMS - Jornada Inativos Quarta Semana 29022024</option>
+                  <option value="campanha11">69140 - SMS - Oferta Relampago Mistura Lactea 01032024</option>
+                  <option value="campanha12">69150 - SMS - Sabadao Amigao Publico 1 MS 02032024</option>
+                  <option value="campanha13">69148 - SMS - Sabadao Amigao Publico 1 PR 02032024</option>
+                  <option value="campanha14">69149 - SMS - Sabadao Amigao Publico 1 SP 02032024</option>
+                  <option value="campanha15">69153 - SMS - Sabadao Amigao Publico 2 MS 02032024</option>
+                  <option value="campanha16">69151 - SMS - Sabadao Amigao Publico 2 PR 02032024</option>
+                  <option value="campanha17">69152 - SMS - Sabadao Amigao Publico 2 SP 02032024</option>
+                  <option value="campanha18">69176 - Email - Abastecimento Vitrine 1 Publico 1 05032024</option>
+                  <option value="campanha19">69178 - Email - Abastecimento Vitrine 1 Publico 2 05032024</option>
+                  <option value="campanha20">69190 - Email - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 1 05032024</option>
+                  <option value="campanha21">69191 - Email - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 2 05032024</option>
+                  <option value="campanha22">69192 - Email - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 3 05032024</option>
+                  <option value="campanha23">69185 - Email - TRADE MKT BRAHMA CHOPP 350ML PR MS 05032024</option>
+                  <option value="campanha24">69186 - Email - TRADE MKT BRAHMA CHOPP 350ML SP 05032024</option>
+                  <option value="campanha25">69183 - Email - TRADE MKT CORONA LN 330ML PR MS 05032024</option>
+                  <option value="campanha26">69184 - Email - TRADE MKT CORONA LN 330ML SP 05032024</option>
+                  <option value="campanha27">69195 - Email - TRADE MKT GUARANA ZERO 350ML 05032024</option>
+                  <option value="campanha28">69196 - Email - TRADE MKT SKOL 350ML 05032024</option>
+                  <option value="campanha29">69187 - Email - TRADE MKT UNILEVER - FESTIVAL DA BELEZA CLEAR 05032024</option>
+                  <option value="campanha30">69188 - Email - TRADE MKT UNILEVER - HELLMANNS 05032024</option>
+                  <option value="campanha31">69181 - Push - Abastecimento Vitrine 1 Publico 1 05032024</option>
+                  <option value="campanha32">69179 - SMS - Abastecimento Vitrine 1 Publico 1 05032024</option>
+                  <option value="campanha33">69180 - SMS - Abastecimento Vitrine 1 Publico 2 05032024</option>
+                  <option value="campanha34">69197 - SMS - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 1 05032024</option>
+                  <option value="campanha35">69198 - SMS - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 2 05032024</option>
+                  <option value="campanha36">69199 - SMS - Encarte Pascoa II Organize-se pra Pascoa Disp 1 Pub 3 05032024</option>
+                  <option value="campanha37">69202 - Email - Festival da Beleza Retencao 06032024</option>
+                  <option value="campanha38">69205 - SMS - Festival da Beleza Retencao MS 06032024</option>
+                  <option value="campanha39">69203 - SMS - Festival da Beleza Retencao PR 06032024</option>
+                  <option value="campanha40">69204 - SMS - Festival da Beleza Retencao SP 06032024</option>
+                  <option value="campanha41">69201 - SMS - Oferta Relampago Fralda Pampers 06032024</option>
+                  <option value="campanha42">69222 - Custom Audience - TRADE MKT YOKI - PIPOCAS 07032023</option>
+                  <option value="campanha43">69215 - Email - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub1 07032024</option>
+                  <option value="campanha44">69214 - Email - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub2 07032024</option>
+                  <option value="campanha45">69218 - SMS - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub1 MS 07032024</option>
+                  <option value="campanha46">69216 - SMS - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub1 PR 07032024</option>
+                  <option value="campanha47">69220 - SMS - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub2 MS 07032024</option>
+                  <option value="campanha48">69219 - SMS - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub2 PR 07032024</option>
+                  <option value="campanha49">69221 - SMS - Encarte Pascoa II: Tempo em Familia (disp. 2) Pub2 SP 07032024</option>
+                  <option value="campanha50">69233 - Custom Audience - TRADE MKT SPRITE - LEMON FRESH 08032024</option>
+                  <option value="campanha51">69246 - Custom Audience - TRADE MKT YPE - PROMOCAO ACHE O X 08032024</option>
+                  <option value="campanha52">69248 - Email - Dia Internacional da Mulher - Presentes 08032024</option>
+                  <option value="campanha53">69239 - Email - Festival da Beleza Dia Internacional da Mulher Dp3 08032024</option>
+                  <option value="campanha54">69249 - SMS - Dia Internacional da Mulher - Presentes 08032024</option>
+                  <option value="campanha55">69242 - SMS - Festival da Beleza Dia Internacional da Mulher Dp3 MS 08032024</option>
+                  <option value="campanha56">69240 - SMS - Festival da Beleza Dia Internacional da Mulher Dp3 PR 08032024</option>
+                  <option value="campanha57">69241 - SMS - Festival da Beleza Dia Internacional da Mulher Dp3 SP 08032024</option>
+                  <option value="campanha58">69238 - SMS - Oferta Relampago Margarina PR e SP 08032024</option>
+                  <option id="naoUsar">Campanhas Semana - 11/03 a 17/03</option>
+                  <option value="campanha59">69271 - Email - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub1 11032024</option>
+                  <option value="campanha60">69275 - Email - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub2 11032024</option>
+                  <option value="campanha61">69278 - Email - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub3 11032024</option>
+                  <option value="campanha62">69273 - Push - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub1 11032024</option>
+                  <option value="campanha63">69277 - Push - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub2 11032024</option>
+                  <option value="campanha64">69281 - Push - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub3 11032024</option>
+                  <option value="campanha65">69272 - SMS - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub1 11032024</option>
+                  <option value="campanha66">69276 - SMS - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub2 11032024</option>
+                  <option value="campanha67">69279 - SMS - Festival Meu Bebe Tudo pro Seu Bebe Ativacao disp. 1 Pub3 11032024</option>
+                  <option value="campanha68">69288 - Custom Audience - Festival Meu Bebe Tudo pro Seu Bebe 12032024</option>
+                  <option value="campanha69">69282 - Email - Reposicao Vitrine 2 Publico 1 11032024</option>
+                  <option value="campanha70">69283 - Email - Reposicao Vitrine 2 Publico 2 12032024</option>
+                  <option value="campanha71">69351 - Custom Audience - Inativos Exclusivo 13032024</option>
+                  <option value="campanha72">69311 - Email - Inativos Exclusivo Publico 1 13032024</option>
+                  <option value="campanha73">69313 - Email - Inativos Exclusivo Publico 2 13032024</option>
+                  <option value="campanha74">69316 - Push - Inativos Exclusivo Publico 1 13032024</option>
+                  <option value="campanha75">69315 - Push - Inativos Exclusivo Publico 2 13032024</option>
+                  <option value="campanha76">69312 - SMS - Inativos Exclusivo Publico 1 13032024</option>
+                  <option value="campanha77">69314 - SMS - Inativos Exclusivo Publico 2 13032024</option>
+                  <option value="campanha78">69352 - Custom Audience - TRADE MKT Unilever Rexona 14032024</option>
+                  <option value="campanha79">69357 - Email - Dia Mundial do Consumidor 15032024</option>
+                  <option value="campanha80">69355 - Email - Dia Nacional dos Animais 14032024</option>
+                  <option value="campanha81">69292 - Email - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub1 15032024</option>
+                  <option value="campanha82">69297 - Email - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub2 15032024</option>
+                  <option value="campanha83">69296 - Push - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub1 15032024</option>
+                  <option value="campanha84">69299 - Push - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub2 15032024</option>
+                  <option value="campanha85">69358 - SMS - Dia Mundial do Consumidor 15032024</option>
+                  <option value="campanha86">69356 - SMS - Dia Nacional dos Animais 14032024</option>
+                  <option value="campanha87">69295 - SMS - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub1 15032024</option>
+                  <option value="campanha88">69298 - SMS - Festival Meu Bebe Cuidado em Todas as Idades Recuperacao disp2 Pub2 15032024</option>
+                  <option value="campanha89">69406 - Custom Audience - TRADE MKT AMBEV - CORONA SP 16032024</option>
+                  <option value="campanha90">69405 - Custom Audience - TRADE MKT AMBEV - PEPSI BLACK 2L PR MS 16032024</option>
+                  <option value="campanha91">69411 - Custom Audience - TRADE MKT AMBEV - PEPSI BLACK 2L SP 16032024/option>
+                  <option value="campanha92">69403 - Custom Audience - TRADE MKT AMBEV - PEPSI BLACK 350ML PR MS 16032024</option>
+                  <option value="campanha93">69404 - Custom Audience - TRADE MKT AMBEV - PEPSI BLACK 350ML SP 16032024</option>
+                  <option value="campanha94">69412 - Custom Audience - TRADE MKT COCA - THEREZOPOLIS 16032024</option>
+                  <option value="campanha95">69402 - Custom Audience - TRADE MKT COCA-COLA CREATIONS K-WAVE 16032024</option>
+                  <option value="campanha96">69415 - Custom Audience - TRADE MKT NESTLE - ACHOCOLATADO EM PO NESCAU 16032024</option>
+                  <option value="campanha97">69407 - Custom Audience - TRADE MKT NESTLE - CANDY BARS 16032024</option>
+                  <option value="campanha98">69414 - Custom Audience - TRADE MKT NESTLE - FORMULAS INFANTIS 16032024</option>
+                  <option value="campanha99">69413 - Custom Audience - TRADE MKT NESTLE - INGREDIENTES CULINARIOS 16032024</option>
+                  <option value="campanha100">69408 - Custom Audience - TRADE MKT PEPSICO VERAO 16032024</option>
+                  <option value="campanha101">69409 - Custom Audience - TRADE MKT SCJ - LYSOFORM 16032024</option>
+                  <option value="campanha102">69422 - Custom Audience - TRADE MKT VENTISQUEIRO 16032024</option>
+                  <option value="campanha103">69410 - Custom Audience - TRADE MKT YPE LINHA GREEN 16032024</option>
+                  <option value="campanha104">69396 - Email - TRADE MKT BUDWEISER 330ML PR MS 15032024</option>
+                  <option value="campanha105">69398 - Email - TRADE MKT BUDWEISER 330ML SP 15032024</option>
+                  <option value="campanha106">69394 - Email - TRADE MKT BUDWEISER 350ML PR MS 15032024</option>
+                  <option value="campanha107">69395 - Email - TRADE MKT BUDWEISER 350ML SP 15032024</option>
+                  <option value="campanha108">69399 - Email - TRADE MKT SPATEN 350ML PR MS 15032024</option>
+                  <option value="campanha109">69400 - Email - TRADE MKT SPATEN 350ML SP 15032024</option>
+                  <option value="campanha110">69401 - Email - TRADE MKT YPE LINHA GREEN 15032024</option>
+          
+          
+                <!-- Adicione mais opções conforme necessário -->
+              </select>
+            </header>
+          </div>  
+          <main>  
+            <div id="conteiner">
+              <div id="conteiner__info">
+                <div id="campanhaNome">
+                  <h3></h3>
+                </div>
+          
+                <div id="campanhaFiltro">
+                  <p></p>
+                </div>
+          
+                <div id="campanhaPublicoAbordado">
+                  <p></p>
+                </div>
+          
+                <div id="campanhaPublicoGrupoControle">
+                  <p></p>
+                </div>
+          
+                <div id="campanhaMensuracao">
+                  <p></p>
+                </div>
+                
+              </div>
+          
+              <div id="conteiner__produtos">
+                <div id="campanhaProdutosMensuracao">
+                  <p></p>
+                </div>  
+              </div>  
+          </div>
+          </main>
+          
+          <div>
+            <button id="downloadButton" onclick="exportarParaExcel()">Download Excel</button>
+          </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

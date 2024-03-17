@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div>
+        <ul>
+            <li class="item-menu">
+                <a href="/index.html">
+                    <span class="icon"><i class="bi bi-house-door"></i></span>
+                    <span class="txt-link">Ínicio</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-mailbox-flag"></i></span>
+                    <span class="txt-link">Campanhas</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnplanejamento()" id="btn-planej">
+                    <span class="icon"><i class="bi bi-calendar3"></i></span>
+                    <span class="txt-link">Planejamento</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnresultado()" id="btn-resultado">
+                    <span class="icon"><i class="bi bi-umbrella-fill"></i></span>
+                    <span class="txt-link">Resultados</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="btnconfig()" id="btn-config">
+                    <span class="icon"><i class="bi bi-gear"></i></span>
+                    <span class="txt-link">Configurações</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div  class="conteudo-movivel">
+        <div id="conteiner__campanhas">
+            <header>
+              <div id="conteiner__text">
+                <h1 style="color: #ffffff;">CRM - Campanhas</h1>
+                <h1 style="background-color: #2a3db4; padding: 3px; color: #ffffff; border-radius: 5px;">Grupo Amigão</h1>
+              </div>
+              <div style="padding: 5px 0 30px 0;">
+                <span style="color: #ffffff; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;">Selecione o Mês:</span>
+                <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+                <nav id="menu-meses" class="menu-meses">
+                    <ul>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Janeiro</a></li>
+                        <li><a href="/PaginaCampanhaMeses/Fevereiro/index.html" class="menu-mes" id="menu-meses">Fevereiro</a></li>
+                        <li><a href="/PaginaCampanhaMeses/Março/index.html" class="menu-mes" id="menu-meses">Março</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Abril</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Maio</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Junho</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Julho</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Agosto</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Setembro</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Outubro</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Novembro</a></li>
+                        <li><a href="#" class="menu-mes" onclick="semDados()" id="menu-meses">Dezembro</a></li>
+                    </ul>
+                </nav>
+            </div>
+                  <div id="conteudo-conteiner-crm">
+                      <h1 id="conteudo-conteiner-font">Selecione um mês no menu para ter visualização das campanhas realizadas...</h1>
+                  </div>
+            </div>
+</body>
+<script src="script.js"></script>
+</html>
